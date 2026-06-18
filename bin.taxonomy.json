@@ -1,0 +1,95 @@
+{
+  "taxonomy_id": "saskatoon_civic_memory_42",
+  "version": "0.1.0",
+  "city_id": "saskatoon_sk_ca",
+  "observer": {
+    "id": 43,
+    "name": "Ibal"
+  },
+  "rings": [
+    {
+      "ring_id": 1,
+      "name": "Place, Land, Memory",
+      "bins": [
+        { "bin_id": "01", "name": "Deep Place and Indigenous Context", "scope": "Long history, Indigenous presence, Treaty context, Dakota, Cree, Metis, place names, cultural protocol notes", "default_sensitivity": "heightened_review" },
+        { "bin_id": "02", "name": "River, Land, Climate, Ecology", "scope": "South Saskatchewan River, geology, riverbank, Meewasin, wildlife, climate, flood, drought, smoke", "default_sensitivity": "standard" },
+        { "bin_id": "03", "name": "Neighbourhoods and Boundaries", "scope": "Neighbourhoods, wards, annexations, former towns, subdivisions, area plans", "default_sensitivity": "standard" },
+        { "bin_id": "04", "name": "Maps, Streets, Parcels, Addresses", "scope": "Historic maps, aerials, street names, address changes, rail corridors, land-use layers", "default_sensitivity": "review_required" },
+        { "bin_id": "05", "name": "Heritage Places and Landmarks", "scope": "Buildings, bridges, heritage register items, public art, monuments, cultural landscapes", "default_sensitivity": "standard" },
+        { "bin_id": "06", "name": "Cemeteries, Memorials, Lost Places", "scope": "Cemeteries, memorials, time capsules, demolished places, forgotten sites", "default_sensitivity": "heightened_review" }
+      ]
+    },
+    {
+      "ring_id": 2,
+      "name": "Governance, Planning, Civic Process",
+      "bins": [
+        { "bin_id": "07", "name": "Council, Mayors, Committees", "scope": "Council decisions, minutes, motions, mayors, committees, civic governance", "default_sensitivity": "standard" },
+        { "bin_id": "08", "name": "Elections and Representation", "scope": "Civic elections, ward changes, candidates, turnout, results, representation history", "default_sensitivity": "standard" },
+        { "bin_id": "09", "name": "Budgets, Taxes, Procurement", "scope": "Budgets, spending, tenders, grants, taxes, financial decisions", "default_sensitivity": "standard" },
+        { "bin_id": "10", "name": "Planning, Zoning, Development", "scope": "Zoning, permits, density, plans, neighbourhood change, infill, major projects", "default_sensitivity": "standard" },
+        { "bin_id": "11", "name": "Infrastructure and Utilities", "scope": "Water, sewer, power, roads, bridges, waste, snow clearing, streetlights", "default_sensitivity": "standard" },
+        { "bin_id": "12", "name": "Public Consultation and Civic Process", "scope": "Engagement, surveys, public notices, petitions, meetings, civic participation", "default_sensitivity": "standard" }
+      ]
+    },
+    {
+      "ring_id": 3,
+      "name": "People, Services, Community Life",
+      "bins": [
+        { "bin_id": "13", "name": "Population and Demographics", "scope": "Census, population, age, household structure, growth, migration", "default_sensitivity": "aggregate_only" },
+        { "bin_id": "14", "name": "Housing and Homelessness", "scope": "Rent, housing supply, shelters, encampments, affordability, displacement", "default_sensitivity": "heightened_review" },
+        { "bin_id": "15", "name": "Health, Disability, Accessibility", "scope": "Hospitals, clinics, disability access, public health, accessibility barriers", "default_sensitivity": "heightened_review" },
+        { "bin_id": "16", "name": "Education, Libraries, Learning", "scope": "Schools, libraries, university, Sask Polytech, programs, literacy, archives", "default_sensitivity": "standard" },
+        { "bin_id": "17", "name": "Community Associations and Nonprofits", "scope": "Neighbourhood associations, service groups, mutual aid, local organizations", "default_sensitivity": "standard" },
+        { "bin_id": "18", "name": "Culture, Diversity, Newcomers", "scope": "Cultural communities, language, immigration, inclusion, community celebrations", "default_sensitivity": "heightened_review" }
+      ]
+    },
+    {
+      "ring_id": 4,
+      "name": "Economy, Work, Everyday Cost",
+      "bins": [
+        { "bin_id": "19", "name": "Business Districts and Local Economy", "scope": "Downtown, Broadway, Riversdale, 8th Street, malls, local business openings and closures", "default_sensitivity": "standard" },
+        { "bin_id": "20", "name": "Work, Labour, Unions, Employers", "scope": "Major employers, labour disputes, workplace history, unions, employment trends", "default_sensitivity": "standard" },
+        { "bin_id": "21", "name": "Agriculture, Resource Economy, Potash", "scope": "Agricultural roots, potash, mining, rail, regional economic dependencies", "default_sensitivity": "standard" },
+        { "bin_id": "22", "name": "Technology, Research, Startups", "scope": "Tech sector, university research, innovation, local digital economy", "default_sensitivity": "standard" },
+        { "bin_id": "23", "name": "Tourism, Hospitality, Events Economy", "scope": "Hotels, festivals, conventions, visitor economy", "default_sensitivity": "standard" },
+        { "bin_id": "24", "name": "Cost of Living and Everyday Money", "scope": "Groceries, utilities, transit fares, taxes, affordability, poverty pressure", "default_sensitivity": "standard" }
+      ]
+    },
+    {
+      "ring_id": 5,
+      "name": "Culture, Recreation, Local Texture",
+      "bins": [
+        { "bin_id": "25", "name": "Arts, Music, Literature, Film", "scope": "Galleries, bands, writers, shows, venues, public art, zines, local media arts", "default_sensitivity": "standard" },
+        { "bin_id": "26", "name": "Sports, Recreation, Parks", "scope": "Blades, Rush, Huskies, pools, rinks, parks, trails, recreation facilities", "default_sensitivity": "standard" },
+        { "bin_id": "27", "name": "Food, Restaurants, Markets", "scope": "Restaurants, bakeries, food trucks, farmers markets, food history", "default_sensitivity": "standard" },
+        { "bin_id": "28", "name": "Nightlife, Arcades, Punk, Gaming", "scope": "Bars, clubs, arcades, game stores, punk history, subcultures, venues", "default_sensitivity": "standard" },
+        { "bin_id": "29", "name": "Faith, Ritual, Community Gathering", "scope": "Churches, temples, mosques, ceremonies, parades, cultural rituals", "default_sensitivity": "heightened_review" },
+        { "bin_id": "30", "name": "Oral History and Local Characters", "scope": "Interviews, memories, personal stories, consent-based local lore", "default_sensitivity": "heightened_review" }
+      ]
+    },
+    {
+      "ring_id": 6,
+      "name": "Safety, Emergency, Resilience",
+      "bins": [
+        { "bin_id": "31", "name": "Police, Courts, Crime, Public Safety", "scope": "Police releases, crime data, court-linked public records, safety trends", "default_sensitivity": "heightened_review" },
+        { "bin_id": "32", "name": "Fire, Rescue, Emergency Response", "scope": "Fire releases, rescues, hazmat, river rescue, emergency response", "default_sensitivity": "review_required" },
+        { "bin_id": "33", "name": "Road, Transit, Pedestrian, Cycling Safety", "scope": "Collisions, transit reliability, bike lanes, pedestrian safety, construction impacts", "default_sensitivity": "review_required" },
+        { "bin_id": "34", "name": "Overdose, Crisis, Social Harm", "scope": "Overdose response, toxic drug alerts, mental-health crisis, support systems", "default_sensitivity": "heightened_review" },
+        { "bin_id": "35", "name": "Weather, Disaster, Resilience", "scope": "Heat, cold, storms, smoke, flooding, emergency plans, outages", "default_sensitivity": "review_required" },
+        { "bin_id": "36", "name": "Animals, Environment, Hazards", "scope": "Coyotes, pets, disease, trees, pests, spills, environmental risk", "default_sensitivity": "review_required" }
+      ]
+    },
+    {
+      "ring_id": 7,
+      "name": "Media, Archives, Analysis, Egress",
+      "bins": [
+        { "bin_id": "37", "name": "News Releases and Media Claims", "scope": "Official releases, local media articles, claim extraction, story tracking", "default_sensitivity": "review_required" },
+        { "bin_id": "38", "name": "Archives and Finding Aids", "scope": "City Archives, MemorySask, library history room, museum references, research targets", "default_sensitivity": "review_required" },
+        { "bin_id": "39", "name": "Photos, Audio, Video, Ephemera", "scope": "Photo references, postcards, flyers, posters, radio, video, oral recordings", "default_sensitivity": "review_required" },
+        { "bin_id": "40", "name": "Conflicts, Corrections, Source Quality", "scope": "Retractions, changed records, source disagreement, missing data, stale data", "default_sensitivity": "standard" },
+        { "bin_id": "41", "name": "Trends, Patterns, Anomalies", "scope": "Longitudinal analysis, neighbourhood change, recurring signals, unusual shifts", "default_sensitivity": "standard" },
+        { "bin_id": "42", "name": "Seeds, Briefs, Dashboards, Publications", "scope": "Generated articles, dashboard cards, timelines, civic packets, public explainers", "default_sensitivity": "review_required" }
+      ]
+    }
+  ]
+}
