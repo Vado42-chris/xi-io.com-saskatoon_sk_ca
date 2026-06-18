@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/place.schema.json",
+  "title": "Saskatoon Civic Memory Place",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["place_id", "city_id", "place_type", "name", "public_display_status", "review_status"],
+  "properties": {
+    "place_id": { "type": "string", "pattern": "^place:[a-z0-9_:-]+$" },
+    "city_id": { "const": "saskatoon_sk_ca" },
+    "place_type": {
+      "type": "string",
+      "enum": ["neighbourhood", "ward", "street", "bridge", "park", "public_facility", "heritage_place", "business_district", "venue", "former_place", "landmark", "river_feature", "site_reference", "unknown"]
+    },
+    "name": { "type": "string" },
+    "aliases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "description": { "type": "string", "default": "" },
+    "neighbourhood_id": { "type": ["string", "null"] },
+    "ward_id": { "type": ["string", "null"] },
+    "geometry_status": {
+      "type": "string",
+      "enum": ["none", "generalized_point", "public_facility_point", "boundary", "line", "withheld", "unknown"],
+      "default": "unknown"
+    },
+    "geometry_ref": { "type": ["string", "null"] },
+    "time_start": { "type": ["string", "null"] },
+    "time_end": { "type": ["string", "null"] },
+    "source_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"],
+      "default": "unknown_review_required"
+    },
+    "public_display_status": {
+      "type": "string",
+      "enum": ["public_safe", "public_aggregate_only", "public_metadata_only", "review_required", "blocked"]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "ibal_review_required", "reviewed", "needs_source", "needs_rights_review", "needs_privacy_review", "blocked"]
+    },
+    "notes": { "type": "string", "default": "" }
+  }
+}
