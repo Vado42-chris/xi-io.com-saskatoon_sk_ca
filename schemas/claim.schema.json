@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/claim.schema.json",
+  "title": "Saskatoon Civic Memory Claim",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["claim_id", "source_id", "claim_text", "claim_type", "claim_status", "observed_at"],
+  "properties": {
+    "claim_id": { "type": "string", "pattern": "^claim:[a-z0-9_:-]+$" },
+    "source_id": { "type": "string" },
+    "source_url": { "type": ["string", "null"], "format": "uri" },
+    "source_title": { "type": ["string", "null"] },
+    "claim_text": { "type": "string", "minLength": 1 },
+    "claim_summary": { "type": "string", "default": "" },
+    "claim_type": {
+      "type": "string",
+      "enum": ["event_claim", "place_claim", "date_claim", "identity_claim", "governance_claim", "statistical_claim", "historical_claim", "rights_claim", "correction_claim", "interpretive_claim", "unknown"]
+    },
+    "claim_status": {
+      "type": "string",
+      "enum": ["observed", "linked", "confirmed", "conflicted", "corrected", "retracted", "unverified", "blocked"]
+    },
+    "related_record_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "confidence_level": {
+      "type": "string",
+      "enum": ["official_primary", "official_secondary", "licensed_dataset", "media_reported", "community_reported", "firsthand_with_consent", "unverified_claim", "research_target", "unknown"],
+      "default": "unknown"
+    },
+    "sensitivity_level": {
+      "type": "string",
+      "enum": ["standard", "review_required", "heightened_review", "aggregate_only", "blocked"],
+      "default": "review_required"
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"],
+      "default": "unknown_review_required"
+    },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "published_at": { "type": ["string", "null"], "format": "date-time" },
+    "notes": { "type": "string", "default": "" }
+  }
+}
