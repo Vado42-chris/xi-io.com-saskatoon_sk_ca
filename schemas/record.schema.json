@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/record.schema.json",
+  "title": "Saskatoon Civic Memory Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "city_id",
+    "record_type",
+    "title",
+    "summary",
+    "bin_primary",
+    "source_ids",
+    "rights_status",
+    "public_display_status",
+    "review_status",
+    "created_at"
+  ],
+  "properties": {
+    "record_id": { "type": "string", "pattern": "^saskatoon_sk_ca:[a-z0-9_:-]+$" },
+    "city_id": { "const": "saskatoon_sk_ca" },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "event",
+        "place",
+        "person_public",
+        "organization",
+        "artifact_reference",
+        "photo_reference",
+        "map_reference",
+        "archive_reference",
+        "dataset_snapshot",
+        "news_claim_cluster",
+        "civic_decision",
+        "timeline_entry",
+        "neighbourhood_profile",
+        "business_entry",
+        "venue_entry",
+        "cultural_memory",
+        "oral_history",
+        "dashboard_metric",
+        "story_seed",
+        "research_note"
+      ]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "date_start": { "type": ["string", "null"] },
+    "date_end": { "type": ["string", "null"] },
+    "time_depth": {
+      "type": "string",
+      "enum": [
+        "deep_time",
+        "pre_1880s",
+        "1880s_1905_settlement_and_rail_formation",
+        "1906_1945_city_formation_and_wartime",
+        "1946_1979_postwar_growth",
+        "1980_1999_late_twentieth_century",
+        "2000_2019_contemporary_city",
+        "2020_present_current_civic_layer",
+        "future_planned",
+        "unknown_pending_research"
+      ],
+      "default": "unknown_pending_research"
+    },
+    "time_confidence": {
+      "type": "string",
+      "enum": ["exact_datetime", "exact_date", "month", "year", "date_range", "decade", "era", "unknown"],
+      "default": "unknown"
+    },
+    "place_id": { "type": ["string", "null"] },
+    "neighbourhood_id": { "type": ["string", "null"] },
+    "ward_id": { "type": ["string", "null"] },
+    "location_precision": {
+      "type": "string",
+      "enum": ["exact_public_facility", "intersection", "block", "neighbourhood", "ward", "citywide", "withheld", "unknown"],
+      "default": "unknown"
+    },
+    "bin_primary": { "type": "string", "pattern": "^(0[1-9]|[1-3][0-9]|4[0-2])$" },
+    "bin_secondary": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^(0[1-9]|[1-3][0-9]|4[0-2])$" },
+      "uniqueItems": true,
+      "default": []
+    },
+    "source_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+    "claim_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "receipt_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "related_record_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"]
+    },
+    "public_display_status": {
+      "type": "string",
+      "enum": ["public_safe", "public_aggregate_only", "public_metadata_only", "review_required", "blocked"]
+    },
+    "sensitivity_level": {
+      "type": "string",
+      "enum": ["standard", "review_required", "heightened_review", "aggregate_only", "blocked"],
+      "default": "review_required"
+    },
+    "confidence_level": {
+      "type": "string",
+      "enum": ["official_primary", "official_secondary", "licensed_dataset", "media_reported", "community_reported", "firsthand_with_consent", "unverified_claim", "research_target", "unknown"],
+      "default": "unknown"
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "ibal_review_required", "reviewed", "needs_source", "needs_rights_review", "needs_privacy_review", "blocked"]
+    },
+    "egress_allowed": {
+      "type": "array",
+      "items": { "type": "string", "enum": ["seed", "brief", "timeline", "dashboard_card", "aggregate_dashboard", "civic_packet", "research_note", "none"] },
+      "uniqueItems": true,
+      "default": ["none"]
+    },
+    "tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "notes": { "type": "string", "default": "" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": ["string", "null"], "format": "date-time" }
+  }
+}
