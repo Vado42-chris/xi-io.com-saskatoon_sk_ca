@@ -1,0 +1,44 @@
+{
+  "$schema": "./schemas/city-manifest.schema.json",
+  "city_id": "saskatoon_sk_ca",
+  "project_name": "xi-io.com Saskatoon SK CA",
+  "project_type": "civic_memory_capsule",
+  "version": "0.1.0",
+  "status": "bootstrap",
+  "governing_rule": "Capture Saskatoon as a living civic memory system, not as a feed of problems.",
+  "jurisdiction": {
+    "city": "Saskatoon",
+    "province": "Saskatchewan",
+    "country": "Canada",
+    "country_code": "CA",
+    "province_code": "SK"
+  },
+  "core_object": "record",
+  "observer": {
+    "observer_id": 43,
+    "name": "Ibal",
+    "role": "provenance, rights, bin, place, time, uncertainty, and egress observer"
+  },
+  "taxonomy": {
+    "bin_count": 42,
+    "ring_count": 7,
+    "bins_path": "bin.taxonomy.json"
+  },
+  "storage_posture": {
+    "public_repo": true,
+    "bulk_harvest_enabled": false,
+    "raw_copyright_content_allowed": false,
+    "private_person_data_allowed": false,
+    "append_aware": true
+  },
+  "directories": {
+    "schemas": "schemas/",
+    "records": "records/",
+    "data_snapshots": "data/snapshots/",
+    "derived_data": "data/derived/",
+    "receipts": "data/receipts/",
+    "analysis": "analysis/",
+    "egress": "egress/",
+    "docs": "docs/"
+  }
+}
