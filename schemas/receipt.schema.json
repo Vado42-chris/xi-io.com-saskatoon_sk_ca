@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/receipt.schema.json",
+  "title": "Saskatoon Civic Memory Receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receipt_id", "source_id", "observed_at", "observer", "method", "preservation_action"],
+  "properties": {
+    "receipt_id": { "type": "string", "pattern": "^receipt:[a-z0-9_:-]+$" },
+    "source_id": { "type": "string" },
+    "source_url": { "type": ["string", "null"], "format": "uri" },
+    "observed_at": { "type": "string", "format": "date-time" },
+    "observer": { "type": "string", "default": "Ibal" },
+    "method": {
+      "type": "string",
+      "enum": ["manual_review", "rss_ingress", "api_ingress", "open_data_snapshot", "archive_reference", "metadata_entry", "schema_validation", "human_review"]
+    },
+    "parser_version": { "type": ["string", "null"] },
+    "content_hash": { "type": ["string", "null"] },
+    "hash_algorithm": { "type": ["string", "null"], "enum": ["sha256", "sha512", null] },
+    "preservation_action": {
+      "type": "string",
+      "enum": ["metadata_only", "claim_extracted", "record_created", "record_updated", "snapshot_stored", "rights_blocked", "privacy_blocked", "review_flagged"]
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"],
+      "default": "unknown_review_required"
+    },
+    "public_display_status": {
+      "type": "string",
+      "enum": ["public_safe", "public_aggregate_only", "public_metadata_only", "review_required", "blocked"],
+      "default": "review_required"
+    },
+    "review_notes": { "type": "string", "default": "" }
+  }
+}
