@@ -1,0 +1,39 @@
+{
+  "lexicon_id": "saskatoon_sk_ca_local_civic_memory_lexicon",
+  "version": "0.1.0",
+  "city_id": "saskatoon_sk_ca",
+  "terms": [
+    { "term": "record", "definition": "The core storage object. May represent an event, place, source-linked claim, archive reference, timeline entry, organization, dataset snapshot, cultural memory, or egress artifact." },
+    { "term": "source", "definition": "Where a claim, dataset, record, or reference came from." },
+    { "term": "claim", "definition": "A statement made by a source. Claims are stored separately from normalized records." },
+    { "term": "receipt", "definition": "Provenance packet showing when something was observed, from where, by what method, and with what parser or reviewer." },
+    { "term": "bin", "definition": "One of the 42 civic-memory categories used for classification and routing." },
+    { "term": "Ibal", "definition": "Observer 43. Reviews provenance, rights, place, time, uncertainty, sensitivity, and egress rules." },
+    { "term": "egress", "definition": "A produced output, such as a seed article, dashboard card, timeline, brief, civic packet, or research note." },
+    { "term": "public-safe summary", "definition": "A summary that avoids private data, unsafe amplification, rights violations, and unsupported claims." },
+    { "term": "time_depth", "definition": "A broad historical layer used when exact dates are unknown or when records span eras." },
+    { "term": "time_confidence", "definition": "How precise and reliable the record date is." },
+    { "term": "rights_status", "definition": "Reuse and storage posture for the source or record." },
+    { "term": "public_display_status", "definition": "Whether and how a record may appear in public outputs." }
+  ],
+  "local_aliases": [
+    { "alias": "SPS", "expands_to": "Saskatoon Police Service", "notes": "Use as organization alias only. Do not treat all SPS records as final truth." },
+    { "alias": "SFD", "expands_to": "Saskatoon Fire Department", "notes": "Use as organization alias for fire and rescue sources." },
+    { "alias": "City", "expands_to": "City of Saskatoon", "notes": "Use only when source context is clear." },
+    { "alias": "CBD", "expands_to": "Central Business District", "notes": "May not be identical to casual use of downtown. Requires place normalization." },
+    { "alias": "downtown", "expands_to": "Downtown Saskatoon or Central Business District depending on context", "notes": "Requires source and geography check before normalization." },
+    { "alias": "HUB", "expands_to": "Coordinated acute-risk intervention context", "notes": "Use carefully. May involve vulnerable-person data and should default to heightened review." }
+  ],
+  "time_depth_values": [
+    "deep_time",
+    "pre_1880s",
+    "1880s_1905_settlement_and_rail_formation",
+    "1906_1945_city_formation_and_wartime",
+    "1946_1979_postwar_growth",
+    "1980_1999_late_twentieth_century",
+    "2000_2019_contemporary_city",
+    "2020_present_current_civic_layer",
+    "future_planned",
+    "unknown_pending_research"
+  ]
+}
