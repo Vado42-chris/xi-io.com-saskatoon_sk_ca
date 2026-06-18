@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/source.schema.json",
+  "title": "Saskatoon Civic Memory Source",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source_id", "name", "source_type", "source_status", "harvest_mode", "rights_status", "default_confidence"],
+  "properties": {
+    "source_id": { "type": "string", "pattern": "^[a-z0-9_:-]+$" },
+    "name": { "type": "string" },
+    "source_type": {
+      "type": "string",
+      "enum": ["official_open_data", "official_release", "official_archive", "public_record", "statistical_table", "local_media", "community_organization", "resident_report", "oral_history", "asset_reference", "research_note"]
+    },
+    "source_status": {
+      "type": "string",
+      "enum": ["active", "active_pending_review", "inactive", "retired", "missing", "replaced", "research_target", "blocked"]
+    },
+    "url": { "type": ["string", "null"], "format": "uri" },
+    "publisher": { "type": ["string", "null"] },
+    "harvest_mode": {
+      "type": "string",
+      "enum": ["manual", "rss", "api", "open_data_download", "archive_reference", "metadata_only", "metadata_pending", "metadata_only_pending_rights_review", "open_data_download_or_api_pending", "metadata_or_open_data_pending", "rss_or_metadata_pending"]
+    },
+    "update_cadence": {
+      "type": "string",
+      "enum": ["realtime", "daily", "weekly", "monthly", "annual", "dataset_specific", "irregular", "unknown"]
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"]
+    },
+    "default_confidence": {
+      "type": "string",
+      "enum": ["official_primary", "official_secondary", "licensed_dataset", "media_reported", "community_reported", "firsthand_with_consent", "unverified_claim", "research_target", "unknown"]
+    },
+    "last_checked_at": { "type": ["string", "null"], "format": "date-time" },
+    "licence_url": { "type": ["string", "null"], "format": "uri" },
+    "rights_notes": { "type": "string", "default": "" },
+    "review_notes": { "type": "string", "default": "" },
+    "tags": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] }
+  }
+}
