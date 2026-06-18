@@ -1,0 +1,85 @@
+{
+  "registry_id": "saskatoon_sk_ca_source_registry",
+  "version": "0.1.0",
+  "city_id": "saskatoon_sk_ca",
+  "harvest_status": "index_only_bootstrap",
+  "sources": [
+    {
+      "source_id": "city_of_saskatoon_open_data",
+      "name": "City of Saskatoon Open Data",
+      "source_type": "official_open_data",
+      "source_status": "active_pending_review",
+      "harvest_mode": "open_data_download_or_api_pending",
+      "update_cadence": "dataset_specific",
+      "rights_status": "unknown_review_required",
+      "default_confidence": "official_primary",
+      "notes": "Index source first. Snapshot only datasets with licence and reuse reviewed. Track current, retired, and missing datasets."
+    },
+    {
+      "source_id": "city_of_saskatoon_archives",
+      "name": "City of Saskatoon Archives",
+      "source_type": "official_archive",
+      "source_status": "active_pending_review",
+      "harvest_mode": "archive_reference",
+      "update_cadence": "irregular",
+      "rights_status": "metadata_only",
+      "default_confidence": "official_primary",
+      "notes": "Preserve finding-aid references, collection names, date ranges, and research notes. Do not copy restricted holdings."
+    },
+    {
+      "source_id": "city_of_saskatoon_heritage_register",
+      "name": "City of Saskatoon Heritage Register",
+      "source_type": "public_record",
+      "source_status": "active_pending_review",
+      "harvest_mode": "metadata_or_open_data_pending",
+      "update_cadence": "irregular",
+      "rights_status": "unknown_review_required",
+      "default_confidence": "official_primary",
+      "notes": "Track version, access date, and revision status. Heritage records can feed place and landmark records."
+    },
+    {
+      "source_id": "city_of_saskatoon_history_timeline",
+      "name": "City of Saskatoon History Timeline",
+      "source_type": "public_record",
+      "source_status": "active_pending_review",
+      "harvest_mode": "metadata_only_pending_rights_review",
+      "update_cadence": "irregular",
+      "rights_status": "unknown_review_required",
+      "default_confidence": "official_secondary",
+      "notes": "Use as timeline index and source reference. Avoid copying long passages."
+    },
+    {
+      "source_id": "saskatoon_police_releases",
+      "name": "Saskatoon Police Service News Releases",
+      "source_type": "official_release",
+      "source_status": "active_pending_review",
+      "harvest_mode": "rss_or_metadata_pending",
+      "update_cadence": "irregular",
+      "rights_status": "metadata_only",
+      "default_confidence": "official_primary",
+      "notes": "Sensitive source. Store releases as claims and metadata. Public display defaults to review_required or aggregate_only."
+    },
+    {
+      "source_id": "saskatoon_fire_releases",
+      "name": "Saskatoon Fire Department Releases",
+      "source_type": "official_release",
+      "source_status": "active_pending_review",
+      "harvest_mode": "metadata_pending",
+      "update_cadence": "irregular",
+      "rights_status": "metadata_only",
+      "default_confidence": "official_primary",
+      "notes": "Sensitive source. Generalize locations where needed."
+    },
+    {
+      "source_id": "local_media_index",
+      "name": "Local Media Index",
+      "source_type": "local_media",
+      "source_status": "research_target",
+      "harvest_mode": "metadata_only",
+      "update_cadence": "irregular",
+      "rights_status": "metadata_only",
+      "default_confidence": "media_reported",
+      "notes": "Store metadata, claims, and links. Do not copy full articles."
+    }
+  ]
+}
