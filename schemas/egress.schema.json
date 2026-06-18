@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/egress.schema.json",
+  "title": "Saskatoon Civic Memory Egress",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["egress_id", "city_id", "egress_type", "title", "source_record_ids", "review_status", "public_display_status", "created_at"],
+  "properties": {
+    "egress_id": { "type": "string", "pattern": "^egress:[a-z0-9_:-]+$" },
+    "city_id": { "const": "saskatoon_sk_ca" },
+    "egress_type": {
+      "type": "string",
+      "enum": ["seed", "brief", "timeline", "dashboard_card", "aggregate_dashboard", "civic_packet", "research_note"]
+    },
+    "title": { "type": "string" },
+    "summary": { "type": "string", "default": "" },
+    "source_record_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+    "source_claim_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "source_receipt_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "time_window_start": { "type": ["string", "null"] },
+    "time_window_end": { "type": ["string", "null"] },
+    "place_scope": { "type": ["string", "null"] },
+    "bin_scope": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "ibal_review_required", "reviewed", "needs_source", "needs_rights_review", "needs_privacy_review", "blocked"]
+    },
+    "public_display_status": {
+      "type": "string",
+      "enum": ["public_safe", "public_aggregate_only", "public_metadata_only", "review_required", "blocked"]
+    },
+    "blocked_reasons": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": ["string", "null"], "format": "date-time" },
+    "notes": { "type": "string", "default": "" }
+  }
+}
