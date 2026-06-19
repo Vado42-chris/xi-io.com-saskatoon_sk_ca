@@ -1,6 +1,6 @@
 {
   "registry_id": "saskatoon_sk_ca_source_registry",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "city_id": "saskatoon_sk_ca",
   "harvest_status": "index_only_bootstrap",
   "sources": [
@@ -13,7 +13,7 @@
       "update_cadence": "dataset_specific",
       "rights_status": "unknown_review_required",
       "default_confidence": "official_primary",
-      "notes": "Index source first. Snapshot only datasets with licence and reuse reviewed. Track current, retired, and missing datasets."
+      "notes": "Index source first. Snapshot only datasets with licence and reuse reviewed. Track current, retired, missing, and replaced datasets, especially across the 2024 platform transition."
     },
     {
       "source_id": "city_of_saskatoon_archives",
@@ -47,6 +47,28 @@
       "rights_status": "unknown_review_required",
       "default_confidence": "official_secondary",
       "notes": "Use as timeline index and source reference. Avoid copying long passages."
+    },
+    {
+      "source_id": "saskatoon_transit_gtfs",
+      "name": "Saskatoon Transit GTFS and Realtime Feeds",
+      "source_type": "official_open_data",
+      "source_status": "active_pending_review",
+      "harvest_mode": "open_data_download_or_api_pending",
+      "update_cadence": "realtime",
+      "rights_status": "unknown_review_required",
+      "default_confidence": "official_primary",
+      "notes": "Good first realtime/hourly proof lane. Source includes trip updates, service alerts, vehicle positions, and GTFS downloads. Confirm endpoint terms before storing snapshots."
+    },
+    {
+      "source_id": "right_to_food_food_security_now",
+      "name": "Right To Food Food Security Now Riding Profiles",
+      "source_type": "statistical_table",
+      "source_status": "active_pending_review",
+      "harvest_mode": "metadata_only",
+      "update_cadence": "irregular",
+      "rights_status": "metadata_only",
+      "default_confidence": "research_target",
+      "notes": "Baseline structural-conditions source. Use address lookup only transiently to resolve public geography. Store riding/profile metadata, source references, and mixed-granularity warnings, not private addresses or copied reports."
     },
     {
       "source_id": "saskatoon_police_releases",
