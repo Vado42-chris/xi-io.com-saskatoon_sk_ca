@@ -1,0 +1,98 @@
+{
+  "domain_pack_id": "food_security_and_poverty_pressure_42",
+  "version": "0.1.0",
+  "city_id": "saskatoon_sk_ca",
+  "purpose": "Specialized 42-signal lens for food insecurity, poverty pressure, housing pressure, mobility, accessibility, service gaps, and interventions.",
+  "storage_rule": "Baseline data is structural context, not individual, household, block-level, or danger-score evidence.",
+  "observer": {
+    "id": 43,
+    "name": "Ibal",
+    "role": "Prevent baseline data from becoming stigma, unsafe inference, or unsupported egress."
+  },
+  "clusters": [
+    {
+      "cluster_id": 1,
+      "name": "Geography and Jurisdiction",
+      "signals": [
+        { "signal_id": "01", "name": "Federal Riding" },
+        { "signal_id": "02", "name": "Provincial Constituency" },
+        { "signal_id": "03", "name": "City Ward" },
+        { "signal_id": "04", "name": "Neighbourhood" },
+        { "signal_id": "05", "name": "Census Unit" },
+        { "signal_id": "06", "name": "Service Catchment" }
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "name": "Poverty and Income",
+      "signals": [
+        { "signal_id": "07", "name": "Poverty Rate" },
+        { "signal_id": "08", "name": "After-Tax Income Distribution" },
+        { "signal_id": "09", "name": "Social Assistance Rate" },
+        { "signal_id": "10", "name": "Disability Income Support" },
+        { "signal_id": "11", "name": "Employment Income Pressure" },
+        { "signal_id": "12", "name": "Benefit Gap" }
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "name": "Housing Pressure",
+      "signals": [
+        { "signal_id": "13", "name": "Unaffordable Housing" },
+        { "signal_id": "14", "name": "Inadequate Housing" },
+        { "signal_id": "15", "name": "Unsuitable Housing" },
+        { "signal_id": "16", "name": "Renters Versus Owners" },
+        { "signal_id": "17", "name": "Shelter Cost Versus Income" },
+        { "signal_id": "18", "name": "Eviction or Arrears Signal" }
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "name": "Food Access",
+      "signals": [
+        { "signal_id": "19", "name": "Food Insecurity Rate" },
+        { "signal_id": "20", "name": "Grocery Access" },
+        { "signal_id": "21", "name": "Food Bank Access" },
+        { "signal_id": "22", "name": "Community Fridge or Meal Access" },
+        { "signal_id": "23", "name": "School Food Access" },
+        { "signal_id": "24", "name": "Cultural or Dietary Suitability" }
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "name": "Mobility and Accessibility",
+      "signals": [
+        { "signal_id": "25", "name": "Transit Distance" },
+        { "signal_id": "26", "name": "Transit Cost" },
+        { "signal_id": "27", "name": "Walkability" },
+        { "signal_id": "28", "name": "Disability Access" },
+        { "signal_id": "29", "name": "Winter Access" },
+        { "signal_id": "30", "name": "Delivery Dependency" }
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "name": "Population Vulnerability",
+      "signals": [
+        { "signal_id": "31", "name": "Children" },
+        { "signal_id": "32", "name": "Seniors" },
+        { "signal_id": "33", "name": "Disabled People" },
+        { "signal_id": "34", "name": "Indigenous People" },
+        { "signal_id": "35", "name": "Immigrants and Newcomers" },
+        { "signal_id": "36", "name": "Single Adults and Lone-Parent Households" }
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "name": "Local Signal and Intervention",
+      "signals": [
+        { "signal_id": "37", "name": "News Events" },
+        { "signal_id": "38", "name": "Council Agenda Items" },
+        { "signal_id": "39", "name": "Funding Changes" },
+        { "signal_id": "40", "name": "Service Shortage Alerts" },
+        { "signal_id": "41", "name": "Lived-Experience Reports" },
+        { "signal_id": "42", "name": "Intervention Outcomes" }
+      ]
+    }
+  ]
+}
