@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/automation-job.schema.json",
+  "title": "Saskatoon Civic Memory Automation Job",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["job_id", "city_id", "job_type", "cadence", "source_ids", "enabled", "safety_mode", "review_status"],
+  "properties": {
+    "job_id": { "type": "string", "pattern": "^job:[a-z0-9_:-]+$" },
+    "city_id": { "const": "saskatoon_sk_ca" },
+    "job_type": {
+      "type": "string",
+      "enum": ["source_discovery", "endpoint_check", "metadata_ingress", "dataset_snapshot", "claim_extraction", "record_normalization", "privacy_review", "rights_review", "rollup", "dashboard_metric_build", "seed_generation", "audit"]
+    },
+    "cadence": {
+      "type": "string",
+      "enum": ["realtime", "hourly", "daily", "weekly", "monthly", "quarterly", "yearly", "manual"]
+    },
+    "source_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "endpoint_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "inputs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "outputs": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "enabled": { "type": "boolean" },
+    "safety_mode": {
+      "type": "string",
+      "enum": ["metadata_only", "dry_run", "review_required", "public_safe_only", "blocked"]
+    },
+    "writes_allowed": { "type": "boolean", "default": false },
+    "network_allowed": { "type": "boolean", "default": true },
+    "secrets_required": { "type": "boolean", "default": false },
+    "last_run_at": { "type": ["string", "null"], "format": "date-time" },
+    "next_run_at": { "type": ["string", "null"], "format": "date-time" },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "ibal_review_required", "reviewed", "needs_source", "needs_rights_review", "needs_privacy_review", "blocked"]
+    },
+    "notes": { "type": "string", "default": "" }
+  }
+}
