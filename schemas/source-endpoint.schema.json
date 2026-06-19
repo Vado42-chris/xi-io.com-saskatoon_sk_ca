@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/source-endpoint.schema.json",
+  "title": "Saskatoon Civic Memory Source Endpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["endpoint_id", "source_id", "endpoint_type", "url", "cadence", "rights_status", "review_status"],
+  "properties": {
+    "endpoint_id": { "type": "string", "pattern": "^endpoint:[a-z0-9_:-]+$" },
+    "source_id": { "type": "string" },
+    "endpoint_type": {
+      "type": "string",
+      "enum": ["catalogue", "api", "rss", "atom", "gtfs_static", "gtfs_realtime", "json", "csv", "geojson", "arcgis_rest", "html_metadata", "archive_finding_aid", "manual_review"]
+    },
+    "url": { "type": "string", "format": "uri" },
+    "cadence": {
+      "type": "string",
+      "enum": ["realtime", "hourly", "daily", "weekly", "monthly", "annual", "irregular", "manual", "unknown"]
+    },
+    "expected_formats": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "auth_required": { "type": "boolean", "default": false },
+    "rate_limit_notes": { "type": "string", "default": "" },
+    "robots_or_terms_notes": { "type": "string", "default": "" },
+    "licence_url": { "type": ["string", "null"], "format": "uri" },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"]
+    },
+    "discovery_status": {
+      "type": "string",
+      "enum": ["candidate", "confirmed", "active", "retired", "missing", "replaced", "blocked"],
+      "default": "candidate"
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "ibal_review_required", "reviewed", "needs_source", "needs_rights_review", "needs_privacy_review", "blocked"]
+    },
+    "notes": { "type": "string", "default": "" }
+  }
+}
