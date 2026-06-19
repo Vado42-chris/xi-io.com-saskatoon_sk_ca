@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xi-io.com/saskatoon_sk_ca/schemas/dashboard-metric.schema.json",
+  "title": "Saskatoon Civic Memory Dashboard Metric",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "metric_id",
+    "city_id",
+    "metric_name",
+    "metric_type",
+    "time_window",
+    "time_start",
+    "time_end",
+    "value",
+    "unit",
+    "source_ids",
+    "receipt_ids",
+    "rights_status",
+    "public_display_status",
+    "review_status",
+    "created_at"
+  ],
+  "properties": {
+    "metric_id": { "type": "string", "pattern": "^metric:[a-z0-9_:-]+$" },
+    "city_id": { "const": "saskatoon_sk_ca" },
+    "metric_name": { "type": "string" },
+    "metric_type": {
+      "type": "string",
+      "enum": ["count", "rate", "percentage", "index", "status", "duration", "currency", "text_summary", "composite"]
+    },
+    "time_window": {
+      "type": "string",
+      "enum": ["realtime", "hourly", "daily", "weekly", "monthly", "quarterly", "yearly", "multi_year", "point_in_time"]
+    },
+    "time_start": { "type": "string" },
+    "time_end": { "type": "string" },
+    "geography_id": { "type": ["string", "null"] },
+    "geography_type": {
+      "type": "string",
+      "enum": ["citywide", "neighbourhood", "ward", "federal_riding", "provincial_constituency", "census_unit", "service_catchment", "route", "facility", "unknown"],
+      "default": "unknown"
+    },
+    "bin_scope": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^(0[1-9]|[1-3][0-9]|4[0-2])$" },
+      "uniqueItems": true,
+      "default": []
+    },
+    "domain_pack_id": { "type": ["string", "null"] },
+    "value": { "type": ["number", "integer", "string", "boolean", "null"] },
+    "unit": { "type": "string" },
+    "denominator": { "type": ["number", "integer", "null"] },
+    "calculation_method": { "type": "string", "default": "" },
+    "granularity_status": {
+      "type": "string",
+      "enum": ["source_granularity_confirmed", "mixed_granularity_warning", "proxy_data", "source_granularity_unclear", "derived_rollup", "manual_review_required"],
+      "default": "manual_review_required"
+    },
+    "source_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+    "record_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "claim_ids": { "type": "array", "items": { "type": "string" }, "uniqueItems": true, "default": [] },
+    "receipt_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+    "confidence_level": {
+      "type": "string",
+      "enum": ["official_primary", "official_secondary", "licensed_dataset", "media_reported", "community_reported", "firsthand_with_consent", "unverified_claim", "research_target", "unknown"],
+      "default": "unknown"
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["open_license", "public_domain", "permission_granted", "metadata_only", "fair_dealing_note_only", "restricted", "unknown_review_required", "blocked"]
+    },
+    "public_display_status": {
+      "type": "string",
+      "enum": ["public_safe", "public_aggregate_only", "public_metadata_only", "review_required", "blocked"]
+    },
+    "review_status": {
+      "type": "string",
+      "enum": ["draft", "ibal_review_required", "reviewed", "needs_source", "needs_rights_review", "needs_privacy_review", "blocked"]
+    },
+    "notes": { "type": "string", "default": "" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": ["string", "null"], "format": "date-time" }
+  }
+}
